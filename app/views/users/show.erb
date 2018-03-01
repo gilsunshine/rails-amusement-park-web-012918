@@ -1,0 +1,12 @@
+<label>Name: </label> <%= @user.name %><br>
+<label>Tickets: </label> <%= @user.tickets %><br>
+<label>Mood: </label> <%= @user.mood %><br>
+<label>Height: </label> <%= @user.height %><br>
+<label>Rides: </label> <% @user.rides.each do |ride| %><br>
+<%= ride %><br>
+<% end %>
+<%= link_to "Edit", edit_user_path %><br>
+<%= link_to "See attractions", attractions_path %>
+<%= form_tag '/signout' do %>
+  <input type=submit value='logout'>
+<% end %>

@@ -1,0 +1,22 @@
+<%= form_for @user do |f|%>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+  <h2>There were some errors:</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+  <% end %>
+  <%= f.label "Name:" %><%=f.text_field :name  %><br>
+  <%= f.label "Height (in inches):" %><%=f.number_field :height  %><br>
+  <%= f.label "How happy are you? (1-5 scale)" %><%=f.number_field :happiness  %><br>
+  <%= f.label "How nauseous are you? (1-5 scale)" %><%=f.number_field :nausea  %><br>
+  <%= f.label "How many dollars are in your pocket?" %><%=f.number_field :tickets  %><br>
+  <%= f.label "Checkbox If you are theme park owner" %><%=f.check_box :admin  %><br>
+  <%= f.label "Password" %><%=f.password_field :password %><br>
+  <%= f.label "Password Confirmation" %><%=f.password_field :password_confirmation %><br>
+  <%= f.submit "Create User" %><br>
+  <%= link_to "Back", root_path %>
+<% end %>

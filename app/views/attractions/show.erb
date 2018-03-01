@@ -1,0 +1,10 @@
+<label>Name: </label> a<%= @attraction.name %><br>
+<label>Ticket Requirement: </label> <%= @attraction.tickets %><br>
+<label>Height Requirement: </label> <%= @attraction.min_height %><br>
+<label>Nausea Rating: </label> <%= @attraction.nausea_rating %><br>
+<label>Happiness Rating: </label> <%= @attraction.happiness_rating %><br>
+<%= form_tag '/rides' do %>
+  <%= number_field_tag :id, @attraction.id%>
+  <%= submit_tag "Go on this ride"%>
+<% end %>
+<%= link_to "See attractions", attractions_path %>
