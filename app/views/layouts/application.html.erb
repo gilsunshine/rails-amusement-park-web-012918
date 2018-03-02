@@ -20,6 +20,11 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <a class="navbar-brand" data-method="delete" href="<%= attractions_path%>"/>Attractions</a>
+        <%if session[:user_id]%>
+          <% @user = User.find(id: session[:user_id])%>
+          <a class="navbar-brand" href="<%=signout_path%>">Log Out</a>
+        <% end %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
